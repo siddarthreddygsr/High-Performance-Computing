@@ -1,33 +1,33 @@
 # Lab 4
 
 ## Folder Structure
-
-├── README.md<br/>
-├── REPORT_LAB.pdf<br/>
-├── codes<br/>
-│   ├── q1.c<br/>
-│   ├── q2.c<br/>
-│   ├── q3.c<br/>
-│   └── q4.c<br/>
-├── graph_notebooks<br/>
-│   ├── q1_graph.ipynb<br/>
-│   ├── q2_graphs.ipynb<br/>
-│   ├── q3_graph.ipynb<br/>
-│   └── q4_graphs.ipynb<br/>
-├── graphs<br/>
-│   ├── q1_op.dat<br/>
-│   ├── q2_op.dat<br/>
-│   ├── q3_op.dat<br/>
-│   └── q4_op.dat<br/>
-└── outputs<br/>
-    ├── q1.txt<br/>
-    ├── q2.txt<br/>
-    ├── q2_2048-mec.txt<br/>
-    ├── q3.txt<br/>
-    ├── q31_2048.txt<br/>
-    ├── q3_res.txt<br/>
-    └── q4.txt<br/>
-
+```
+├── README.md
+├── REPORT_LAB.pdf
+├── codes
+│   ├── q1.c
+│   ├── q2.c
+│   ├── q3.c
+│   └── q4.c
+├── graph_notebooks
+│   ├── q1_graph.ipynb
+│   ├── q2_graphs.ipynb
+│   ├── q3_graph.ipynb
+│   └── q4_graphs.ipynb
+├── graphs
+│   ├── q1_op.dat
+│   ├── q2_op.dat
+│   ├── q3_op.dat
+│   └── q4_op.dat
+└── outputs
+    ├── q1.txt
+    ├── q2.txt
+    ├── q2_2048-mec.txt
+    ├── q3.txt
+    ├── q31_2048.txt
+    ├── q3_res.txt
+    └── q4.txt
+```
 codes: This directory contains source code files for each question which are named q1.c, q2.c, q3.c, and q4.c.
 
 graph_notebooks: This directory contains Jupyter notebooks named q1_graph.ipynb, q2_graphs.ipynb, q3_graph.ipynb, and q4_graphs.ipynb. These notebooks are used for generating graphs to visualize the results obtained from the C code.
