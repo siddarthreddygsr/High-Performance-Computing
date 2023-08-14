@@ -1,0 +1,6 @@
+Input:  board read from file i.txt
+20 steps, print interval 1, 20 thread(s)
+
+
+Total time 0.00198483
+Time not counting initialization 0.000302792

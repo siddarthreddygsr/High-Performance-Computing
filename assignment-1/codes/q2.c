@@ -5,20 +5,20 @@
 #include<math.h>
 
 // Function to perform block matrix multiplication
-void block_matrix_mult() {
+void block_matrix_mult(int size, int nt, int power, int block_size) {
     int i, j, k, ii, jj, kk;
-    int pow;
     struct timeval tv1, tv2;
     struct timezone tz;
-    
-    int size_arr[3] = {512, 1024 ,2048};
+    int pow;
+    // int size_arr[3] = {512, 1024 ,2048};
 
-    for(int s=0; s<3; s++){
-        for(int power =2; power<=16; power++){
-            for(int nt = 1; nt<=16; nt = nt*2){
-                for(int block_size = 4; block_size<=64; block_size = block_size*2){
+    // for(int s=0; s<3; s++){
+        // for(int power =2; power<=16; power++){
+            // for(int nt = 1; nt<=16; nt = nt*2){
+                // for(int block_size = 4; block_size<=64; block_size = block_size*2){
                 
-                    int N = size_arr[s];
+                    // int N = size_arr[s];
+                    int N = size;
                     double (*A)[N] = malloc(N * N * sizeof(double));
                     double (*result)[N] = malloc(N * N * sizeof(double));
                     double elapsed; 
@@ -28,7 +28,9 @@ void block_matrix_mult() {
                     for(i = 0; i<N; i++){
                         for(j=0; j<N; j++){
                             A[i][j] = ((float)rand()/ (float)(RAND_MAX));
+                            printf("%f ",A[i][j]);
                         }
+                        printf("\n");
                     }
 
                     omp_set_num_threads(nt);
@@ -57,24 +59,39 @@ void block_matrix_mult() {
 
                     gettimeofday(&tv2, &tz);
 
+                    printf("\n");
+                    for(i = 0; i<N; i++){
+                        for(j=0; j<N; j++){
+                            printf("%f ",result[i][j]);
+                        }
+                        printf("\n");
+                    }
                     elapsed = (double) (tv2.tv_sec-tv1.tv_sec) + (double) (tv2.tv_usec-tv1.tv_usec) * 1.e-6;
 
-                    printf("%4.2lf %d %d %d %d\n", elapsed, size_arr[s], power, nt, block_size);
+                    printf("%4.2lf %d %d %d %d\n", elapsed, size, power, nt, block_size);
 
                     
 
                     
-                }
-            }
-        }
-    }
+                // }
+            // }
+        // }
+    // }
 }
 
-int main() {
+int main(int argc, char*argv[]) {
    
 
+    int size=atoi(argv[1]);
+	int numTh=atoi(argv[2]);
+	int pow=atoi(argv[3]);
+    int block=atoi(argv[4]);
+    if(block > size){
+        printf("Block Size cannot be greater than matrix size\n");
+        return 0;
+    }
     // Call block matrix multiplication function
-    block_matrix_mult();
+    block_matrix_mult(size,numTh,pow,block);
 
     // Print the result matrix
     
